@@ -1,6 +1,6 @@
 package view;
 
-import model.Toys;
+import model.Toy;
 import model.Type;
 
 import java.util.Scanner;
@@ -72,7 +72,7 @@ public class Main {
                     if (option == 1){
                         System.out.println("cuanto quiere disminuir?");
                         increaseDecrease = sc.nextInt();
-                        total = Toys.UNISEX.getAmount() - increaseDecrease;
+                        total = Toy.UNISEX.getAmount() - increaseDecrease;
                         System.out.println("la nueva cantidad es " + total);
                     } else if (option == 2) {
                         System.out.println("cuanto quiere disminuir?");

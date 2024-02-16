@@ -3,22 +3,26 @@ package model;
 import java.util.Arrays;
 
 public enum Type {
-    UNISEX("unisex"),
-    MALE("masculino"),
-    FEMALE("femenino")
+    UNISEX(0),
+    MALE(1),
+    FEMALE(2)
     ;
-    private final String name;
+    private final int identifier;
 
 
-    Type(String name) {
-        this.name = name;
-    }
-    public String getName() {
-        return name;
+    Type(int identifier) {
+        this.identifier = identifier;
     }
 
-    public  static Type types(String name) {
-        return Arrays.stream(Type.values()).filter(c -> c.equals(name)).findFirst().orElseThrow();
+    public int getName() {
+        return identifier;
+    }
+
+    public  static Type types(int identifier) {
+        return Arrays.stream(Type.values())
+                .filter(c -> c.identifier==identifier)
+                .findFirst()
+                .orElseThrow();
 }
 }
 
